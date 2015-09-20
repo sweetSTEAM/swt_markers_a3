@@ -38,8 +38,12 @@
 <Russian>Сохранять цвет и тип</Russian>
 </Key>
 <Key ID="STR_SWT_M_FASTL">
-<English>Fast load</English>
-<Russian>Быстрая загрузка</Russian>
+<English>Save text prefix (G,N,T)</English>
+<Russian>Сохранять приставку (G,N,T)</Russian>
+</Key>
+<Key ID="STR_SWT_M_LOG">
+<English>Logging</English>
+<Russian>Вести лог</Russian>
 </Key>
 <Key ID="STR_SWT_M_BACKGROUND">
 <English>Background</English>
@@ -101,6 +105,10 @@
 <English>Hide info</English>
 <Russian>Скрыть информацию</Russian>
 </Key>
+<Key ID="STR_SWT_M_MARKINFO">
+<English>Show marker info</English>
+<Russian>Информация о маркере</Russian>
+</Key>
 
 <Key ID="STR_SWT_M_MESS_OLD">
 <English>SWT MARKERS: This version is outdated. The paramaters' saving structure has been changed. Resetting to defaults.</English>
@@ -111,8 +119,8 @@
 <Russian>SWT MARKERS: Параметы по умолчанию применены.</Russian>
 </Key>
 <Key ID="STR_SWT_M_MESS_SAVEDMARKS">
-<English>You have saved %1 marker(s). It is advised not to store too many markers in memory. Please unload them after use. If a problem occurs, use the Fast Load option.</English>
-<Russian>Вы сохранили %1 маркеров. Не рекомендуется держать в памяти большое количество маркеров. Выгрузите их после использования. При возникновении проблем используйте опцию Быстрый запуск.</Russian>
+<English>You have saved %1 marker(s). It is advised not to store too many markers in memory. Please unload them after use.</English>
+<Russian>Вы сохранили %1 маркеров. Не рекомендуется держать в памяти большое количество маркеров. Выгрузите их после использования.</Russian>
 </Key>
 <Key ID="STR_SWT_M_MESS_CANTLOAD">
 <English>SWT MARKERS: You can't load more than %2 markers on the map. (You have %1)</English>
@@ -137,26 +145,6 @@
 <Key ID="STR_SWT_M_MESS_DISABLED">
 <English>SWT MARKERS: Marker system disabled</English>
 <Russian>SWT MARKERS: Система маркеров отключена</Russian>
-</Key>
-<Key ID="STR_SWT_M_UNIQ_OWNED">
-<English> - belonged to</English>
-<Russian> - принадлежала </Russian>
-</Key>
-<Key ID="STR_SWT_M_UNIQ_UNKNOWN">
-<English>unknown</English>
-<Russian>Неизвестному</Russian>
-</Key>
-<Key ID="STR_SWT_M_UNIQ_HAVENT">
-<English>You don't have a map</English>
-<Russian>Нет карты</Russian>
-</Key>
-<Key ID="STR_SWT_M_UNIQ_CLOSEMAP">
-<English>Close this map to change the map</English>
-<Russian>Для смены карты закройте текущую карту</Russian>
-</Key>
-<Key ID="STR_SWT_M_UNIQ_LOST">
-<English>You've lost the selected map, opening </English>
-<Russian>Вы потеряли выбранную карту, открываем </Russian>
 </Key>
 <Key ID="STR_SWT_M_MODUL_BRIEF">
 <English>Disable marker system after briefing</English>
@@ -206,18 +194,60 @@
 <English>Only on briefing</English>
 <Russian>Только на брифинге</Russian>
 </Key>
-<Key ID="STR_SWT_M_MODUL_FAST">
-<English>Quick drawing</English>
-<Russian>Быстрое рисование</Russian>
+
+<Key ID="STR_SWT_M_MARKER">
+<English>Marker</English>
+<Russian>Маркер</Russian>
 </Key>
-<Key ID="STR_SWT_M_MODUL_FAST_FOR">
-<English>Quick drawing for</English>
-<Russian>Быстрое рисование для</Russian>
+<Key ID="STR_SWT_M_ELLIPSE">
+<English>Ellipse</English>
+<Russian>Овал</Russian>
+</Key>
+<Key ID="STR_SWT_M_LINE">
+<English>Line</English>
+<Russian>Линия</Russian>
+</Key>
+
+<Key ID="STR_SWT_M_MARKCREATED">
+<English>%1 has placed the &lt;font color='#F88379'&gt;&lt;marker name='%2'&gt;%4&lt;/marker&gt;&lt;/font&gt; into %3</English>
+<Russian>%1 поставил &lt;font color='#F88379'&gt;&lt;marker name='%2'&gt;%4&lt;/marker&gt;&lt;/font&gt; в %3</Russian>
+</Key>
+<Key ID="STR_SWT_M_MARKDELETED">
+<English>%1 deleted the %2's &lt;font color='#F88379'&gt;%4&lt;/font&gt;</English>
+<Russian>%1 удалил &lt;font color='#F88379'&gt;%4&lt;/font&gt; %2'а</Russian>
+</Key>
+<Key ID="STR_SWT_M_MARKDIR">
+<English>%1 changed the direction of his&#160;</English>
+<Russian>%1 изменил направление своего&#160;</Russian>
+</Key>
+<Key ID="STR_SWT_M_MARKPOS">
+<English>%1 changed the position of his&#160;</English>
+<Russian>%1 изменил позицию своего&#160;</Russian>
+</Key>
+<Key ID="STR_SWT_M_MARKLOAD">
+<English>%1 load %2 markers</English>
+<Russian>%1 загрузил %2 маркеров</Russian>
+</Key>
+<Key ID="STR_SWT_M_INFOWIN">
+<English>Placed by: %3&lt;br/&gt;%4&lt;br/&gt;Time:&#160;</English>
+<Russian>Поставлен: %3&lt;br/&gt;%4&lt;br/&gt;Время:&#160;</Russian>
+</Key>
+<Key ID="STR_SWT_M_INFOLOADED">
+<English>&#160;Loaded</English>
+<Russian>&#160;Загруженный</Russian>
+</Key>
+<Key ID="STR_SWT_M_MESS_CANTCHANGE">
+<English>SWT MARKERS: You can change only your markers</English>
+<Russian>SWT MARKERS: Вы можете изменять только ваши маркера</Russian>
+</Key>
+<Key ID="STR_SWT_M_THICKNESS">
+<English>Thickness: %1</English>
+<Russian>Ширина: %1</Russian>
 </Key>
 
 <Key ID="STR_SWT_M_INFOTXT">
-<English>&lt;t size='0.77'&gt;&lt;t align='center' color='%1'&gt;Main info&lt;/t&gt;&lt;br/&gt;&lt;t align='center' color='%1'&gt;Hotkeys:&lt;/t&gt;&lt;br/&gt;&lt;t color='%1'&gt;Arrows Up-Down&lt;/t&gt; - change marker icon&lt;br/&gt;&lt;t color='%1'&gt;Shift + Arrows Up-Down&lt;/t&gt; - change marker color&lt;br/&gt;&lt;t color='%1'&gt;Shift + Arrows Left-Right&lt;/t&gt; - change channel&lt;br/&gt;&lt;t color='%1'&gt;Alt + hold LMB&lt;/t&gt; on marker - change marker direction&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Alt&lt;/t&gt; - draw the straight lines&lt;br/&gt;&lt;t color='%1'&gt;Shift + mouse wheel&lt;/t&gt; - change markers size&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + N, G or T&lt;/t&gt; - select text mode&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Enter&lt;/t&gt; - place marker without closing display&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Click on map&lt;/t&gt; - quick marker placement&lt;br/&gt;&lt;t color='%1'&gt;Shift + Alt + hold LMB&lt;/t&gt; - place markers on mouse movenent (disabled by default)&lt;br/&gt;&lt;t color='%1'&gt;Shift + K&lt;/t&gt; - change map&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Shift&lt;/t&gt; -  set the waypoint for the route highlighting (WIP, use it on your own risk)&lt;br/&gt;You can change marker settings by clicking on the neccessary color or the icon above.&lt;br/&gt;Doubleclick the main marker to show additional marker selection options.&lt;/t&gt;</English>
-<Russian>&lt;t size='0.77'&gt;&lt;t align='center' color='%1'&gt;Основная информация&lt;/t&gt;&lt;br/&gt;&lt;t align='center' color='%1'&gt;Горячие клавиши:&lt;/t&gt;&lt;br/&gt;&lt;t color='%1'&gt;Стрелки Вверх-Вниз&lt;/t&gt; - изменить тип маркера&lt;br/&gt;&lt;t color='%1'&gt;Shift + Стрелки Вверх-Вниз&lt;/t&gt; - изменить цвет маркера&lt;br/&gt;&lt;t color='%1'&gt;Shift + Стрелки Влево-Вправо&lt;/t&gt; - изменить канал&lt;br/&gt;&lt;t color='%1'&gt;Alt + (Удерживать ЛКМ)&lt;/t&gt; - изменить направление маркера&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Alt&lt;/t&gt; - рисовать прямые линии&lt;br/&gt;&lt;t color='%1'&gt;Shift + колёсико мыши&lt;/t&gt; - изменить размер маркера&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + N, G или T&lt;/t&gt; - выбрать текстовую добавку&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Enter&lt;/t&gt; - поставить маркер&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Клик по карте&lt;/t&gt; - быстро поставить маркер&lt;br/&gt;&lt;t color='%1'&gt;Shift + Alt + (Удерживать ЛКМ на карте)&lt;/t&gt; - ставить маркера при движении мыши (откл. по дефолту)&lt;br/&gt;&lt;t color='%1'&gt;Shift + K&lt;/t&gt; - сменить карту&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Shift&lt;/t&gt; -  установаить вейпоинт для маршрута (WIP, использовать на свой страх и риск)&lt;br/&gt;Вы можете изменить параметры маркера, кликнув по нужному цвету или иконке сверху.&lt;br/&gt;При двойном клике по основному маркеру появятся дополнительные опции выбора маркера.&lt;/t&gt;</Russian>
+<English>&lt;t size='0.77'&gt;&lt;t align='center' color='%1'&gt;Main info&lt;/t&gt;&lt;br/&gt;&lt;t align='center' color='%1'&gt;Hotkeys:&lt;/t&gt;&lt;br/&gt;&lt;t color='%1'&gt;Arrows Up-Down&lt;/t&gt; - change marker icon&lt;br/&gt;&lt;t color='%1'&gt;Shift + Arrows Up-Down&lt;/t&gt; - change marker color&lt;br/&gt;&lt;t color='%1'&gt;Shift + (Arrows Left-Right) or Ctrl + (,. or Mouse Wheel)&lt;/t&gt; - change channel&lt;br/&gt;&lt;t color='%1'&gt;Alt + hold LMB&lt;/t&gt; on marker - change marker direction&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Alt + hold LMB&lt;/t&gt; - draw straight lines (thickness: ctrl -, alt +)&lt;br/&gt;&lt;t color='%1'&gt;Shift + Alt + hold LMB&lt;/t&gt; - draw ellipse&lt;br/&gt;&lt;t color='%1'&gt;Shift + Ctrl&lt;/t&gt; - put marker on the nearest road&lt;br/&gt;&lt;t color='%1'&gt;Shift + mouse wheel&lt;/t&gt; - change markers size&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + N, G or T&lt;/t&gt; - select text mode&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Enter&lt;/t&gt; - place marker without closing display&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Click on map&lt;/t&gt; - quick marker placement&lt;br/&gt;You can change marker settings by clicking on the neccessary color or the icon above.&lt;br/&gt;Doubleclick the main marker to show additional marker selection options.&lt;/t&gt;</English>
+<Russian>&lt;t size='0.77'&gt;&lt;t align='center' color='%1'&gt;Основная информация&lt;/t&gt;&lt;br/&gt;&lt;t align='center' color='%1'&gt;Горячие клавиши:&lt;/t&gt;&lt;br/&gt;&lt;t color='%1'&gt;Стрелки Вверх-Вниз&lt;/t&gt; - изменить тип маркера&lt;br/&gt;&lt;t color='%1'&gt;Shift + Стрелки Вверх-Вниз&lt;/t&gt; - изменить цвет маркера&lt;br/&gt;&lt;t color='%1'&gt;Shift + (Стрелки Влево-Вправо) или Ctrl+(, . или колёсико)&lt;/t&gt; - изменить канал&lt;br/&gt;&lt;t color='%1'&gt;Alt + (Удерживать ЛКМ)&lt;/t&gt; - изменить направление маркера&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Alt + Удерживать ЛКМ&lt;/t&gt; - рисовать прямые линии (Ширина: Ctrl -, Alt +)&lt;br/&gt;&lt;t color='%1'&gt;Shift + Alt + удерживать ЛКМ&lt;/t&gt; - овал&lt;br/&gt;&lt;t color='%1'&gt;Shift + Ctrl&lt;/t&gt; - поставить маркер на ближайшую дорогу&lt;br/&gt;&lt;t color='%1'&gt;Shift + колёсико мыши&lt;/t&gt; - изменить размер маркера&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + N, G или T&lt;/t&gt; - выбрать текстовую добавку&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Enter&lt;/t&gt; - поставить маркер&lt;br/&gt;&lt;t color='%1'&gt;Ctrl + Клик по карте&lt;/t&gt; - быстро поставить маркер&lt;br/&gt;Вы можете изменить параметры маркера, кликнув по нужному цвету или иконке сверху.&lt;br/&gt;При двойном клике по основному маркеру появятся дополнительные опции выбора маркера.&lt;/t&gt;</Russian>
 </Key>
 
 
@@ -229,8 +259,11 @@
 
 
 <Key ID="STR_SWT_M_ATXT">
-<English>&lt;t size='0.77'&gt;&lt;t align='center' color='%1'&gt;Credits:&lt;/t&gt;&lt;br/&gt;Sweet Markers System v. 1.0&lt;br/&gt;Created by swatSTEAM.&lt;br/&gt;Contact: &lt;t color='%1'&gt;svvatSTEAM@gmail.com&lt;/t&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='http://goo.gl/SYahVw'&gt;Download&#160;latest&#160;version&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='https://twitter.com/swat_steam'&gt;@swat_steam&lt;/a&gt;&lt;br/&gt;Translation by: &lt;a underline='true' color='%1' href='http://steamcommunity.com/profiles/76561198035114506/'&gt;thiorymos&lt;/a&gt; and GonzoPunkass&lt;br/&gt;Special thanks to &lt;a underline='true' color='%1' href='http://wogames.info'&gt;Weekly&#160;Open&#160;Games&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='%2'&gt;Donate (Yandex)&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='%3'&gt;Donate (PayPal)&lt;/a&gt;&lt;/t&gt;</English>
-<Russian>&lt;t size='0.77'&gt;&lt;t align='center' color='%1'&gt;Credits:&lt;/t&gt;&lt;br/&gt;Sweet Markers System v. 1.0&lt;br/&gt;Created by swatSTEAM.&lt;br/&gt;Contact: &lt;t color='%1'&gt;svvatSTEAM@gmail.com&lt;/t&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='http://goo.gl/SYahVw'&gt;Download&#160;latest&#160;version&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='https://twitter.com/swat_steam'&gt;@swat_steam&lt;/a&gt;&lt;br/&gt;Translation by: &lt;a underline='true' color='%1' href='http://steamcommunity.com/profiles/76561198035114506/'&gt;thiorymos&lt;/a&gt; and GonzoPunkass&lt;br/&gt;Special thanks to &lt;a underline='true' color='%1' href='http://wogames.info'&gt;Weekly&#160;Open&#160;Games&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='%2'&gt;Donate (Yandex)&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='%3'&gt;Donate (PayPal)&lt;/a&gt;&lt;/t&gt;</Russian>
+<English>&lt;t size='0.77'&gt;&lt;t align='center' color='%1'&gt;Credits:&lt;/t&gt;&lt;br/&gt;Sweet Markers System v. 2.1&lt;br/&gt;Created by swatSTEAM&lt;br/&gt;Contact: &lt;t color='%1'&gt;svvatSTEAM@gmail.com&lt;/t&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='https://twitter.com/swat_steam'&gt;@swat_steam&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='http://goo.gl/SYahVw'&gt;Download&#160;latest&#160;version&lt;/a&gt;&lt;br/&gt;Translation by: &lt;a underline='true' color='%1' href='http://steamcommunity.com/profiles/76561198035114506/'&gt;thiorymos&lt;/a&gt; and GonzoPunkass&lt;br/&gt;Special thanks to &lt;a underline='true' color='%1' href='http://wogames.info'&gt;Weekly&#160;Open&#160;Games&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='%2'&gt;Donate (Yandex)&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='%3'&gt;Donate (PayPal)&lt;/a&gt;&lt;/t&gt;</English>
+<Russian>&lt;t size='0.77'&gt;&lt;t align='center' color='%1'&gt;Credits:&lt;/t&gt;&lt;br/&gt;Sweet Markers System v. 2.1&lt;br/&gt;Created by swatSTEAM&lt;br/&gt;Contact: &lt;t color='%1'&gt;svvatSTEAM@gmail.com&lt;/t&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='https://twitter.com/swat_steam'&gt;@swat_steam&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='http://goo.gl/SYahVw'&gt;Download&#160;latest&#160;version&lt;/a&gt;&lt;br/&gt;Translation by: &lt;a underline='true' color='%1' href='http://steamcommunity.com/profiles/76561198035114506/'&gt;thiorymos&lt;/a&gt; and GonzoPunkass&lt;br/&gt;Special thanks to &lt;a underline='true' color='%1' href='http://wogames.info'&gt;Weekly&#160;Open&#160;Games&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='%2'&gt;Donate (Yandex)&lt;/a&gt;&lt;br/&gt;&lt;a underline='true' color='%1' href='%3'&gt;Donate (PayPal)&lt;/a&gt;&lt;/t&gt;</Russian>
 </Key>
+
+
+
 </Container>
 </Package></Project>
