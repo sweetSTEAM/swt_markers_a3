@@ -56,17 +56,6 @@ swt_markers_getColorChannel = {
 
 swt_markers_getColorName = {
 	_name = _this select 0;
-	_tag = _this select 1;
-	{
-		if (name _x == _name) exitWith {
-			_name = switch (side _x) do {
-				case west: {format ["<%2 color='#6495ED'>%1</%2>", _name, _tag]};
-				case east: {format ["<%2 color='#E34234'>%1</%2>", _name, _tag]};
-				case resistance: {format ["<%2 color='#50C878'>%1</%2>", _name, _tag]};
-				case civilian: {format ["<%2 color='#FFED00'>%1</%2>", _name, _tag]};
-			};
-		};
-	} forEach (playableUnits+switchableUnits);
 	_name;
 };
 
