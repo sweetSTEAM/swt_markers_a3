@@ -682,10 +682,27 @@ swt_markers_fnc_save_markers = {
 	systemChat format [localize "STR_SWT_M_MESS_SAVEDMARKS", count _arr_copy];
 };
 
+dell_fnc_safe_string2Array= {
+	params [["_strArray", "[]", [""]]];
+	_simpleArray = "";
+	_isString = false;
+	for "_i" from 0 to (count _strArray - 1) do {
+		_char = _strArray select [_i, 1];
+		if (_char == """") then {_isString = !_isString};
+		if (!_isString && (" ;" find _char) == -1) then {
+			_simpleArray = _simpleArray + _char;
+		};
+		if (_isString) then {
+			_simpleArray = _simpleArray + _char;
+		};
+	};
+	parseSimpleArray _simpleArray;
+};
+
 swt_markers_fnc_load_markers = {
 	if (swt_markers_load_enabled and(((swt_markers_load_enabled_for) and (((leader player == player) or (((effectiveCommander (vehicle player)) == player) and (vehicle player != player))))) or (!swt_markers_load_enabled_for))and((swt_markers_load_enabled_when)or((!swt_markers_load_enabled_when)and!(time>0)))) then {
 		private ["_arr"];
-		_arr =  (if (isNil {_this select 1}) then {[] + (profileNamespace getVariable "swt_markers_save_arr")} else {call compile ("[]+" + ([(_this select 1),";",""] call swt_str_Replace) + "+[]")});
+		_arr =  (if (isNil {_this select 1}) then {[] + (profileNamespace getVariable "swt_markers_save_arr")} else {(_this # 1) call dell_fnc_safe_string2Array});
 		if !(_arr isEqualTo []) then {
 			if (count _arr > 500) exitWith {systemChat (format [localize "STR_SWT_M_MESS_CANTLOAD", count _arr, 500]);};
 			_copy_arr = [];
