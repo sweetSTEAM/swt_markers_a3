@@ -700,7 +700,10 @@ dell_fnc_safe_string2Array= {
 	for "_i" from 0 to (count _strArray - 1) do {
 		_char = _strArray select [_i, 1];
 		if (_char == """") then {_isString = !_isString};
-		if (!_isString && !(_char == " " || _char == ";")) then {
+		if (!_isString && (" ;" find _char) == -1) then {
+			_simpleArray = _simpleArray + _char;
+		};
+		if (_isString) then {
 			_simpleArray = _simpleArray + _char;
 		};
 	};
